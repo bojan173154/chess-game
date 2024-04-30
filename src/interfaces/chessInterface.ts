@@ -13,4 +13,5 @@ export interface ChessBoard {
     position: PiecePosition;
     piece: Piece;
     color: 'white' | 'black';
+    pieceColor: 'white' | 'black' | null;
 }
