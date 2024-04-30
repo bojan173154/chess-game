@@ -19,9 +19,9 @@ const conditionalNewLine = (position: PiecePosition) => {
 
 <template>
     <div class="chess-container">
-        <div v-for="(row, index) in chessStore.chessBoard" :key="index">
+        <div v-for="(row, index) in chessStore.chessBoard" :key="index" class="chess-row">
             <div v-for="file in row" :key="file.position">
-                <chess-file :file-color="file.color" />
+                <chess-file :chess-file="file" />
             </div>
             <br v-if="conditionalNewLine(row[0].position)" />
         </div>
@@ -34,5 +34,10 @@ const conditionalNewLine = (position: PiecePosition) => {
     height: 100%;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.chess-row {
+    display: flex;
 }
 </style>

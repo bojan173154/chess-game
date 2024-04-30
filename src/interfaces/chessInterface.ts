@@ -9,7 +9,7 @@ export type PiecePosition = 'A1' | 'A2' | 'A3' | 'A4' | 'A5' | 'A6' | 'A7' | 'A8
 
 type Piece = 'rook' | 'knight' | 'bishop' | 'pawn' | 'queen' | 'king' | null;
 
-export interface ChessBoard {
+export interface ChessFile {
     position: PiecePosition;
     piece: Piece;
     color: 'white' | 'black';
