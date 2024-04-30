@@ -3,6 +3,8 @@ import { computed } from 'vue';
 
 import type { ChessFile } from '../interfaces/chessInterface';
 
+import { generatePiece } from '../services/componentGenerator';
+
 const props = defineProps<{
     chessFile: ChessFile;
 }>();
@@ -50,6 +52,8 @@ const computedFileNumber = computed(() => {
         <span v-if="computedFileNumber.showNumber" class="file-number">
             {{ computedFileNumber.number }}
         </span>
+
+        <component :is="generatePiece({ piece: chessFile.piece, color: chessFile.pieceColor })"/>
     </div>
 </template>
 
@@ -60,6 +64,9 @@ const computedFileNumber = computed(() => {
     background-color: v-bind('computedFileColor');
     border: 1px solid white;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
 
 .file-letter {

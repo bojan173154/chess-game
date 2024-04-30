@@ -7,7 +7,7 @@ export type PiecePosition = 'A1' | 'A2' | 'A3' | 'A4' | 'A5' | 'A6' | 'A7' | 'A8
     'G1' | 'G2' | 'G3' | 'G4' | 'G5' | 'G6' | 'G7' | 'G8' |
     'H1' | 'H2' | 'H3' | 'H4' | 'H5' | 'H6' | 'H7' | 'H8';
 
-type Piece = 'rook' | 'knight' | 'bishop' | 'pawn' | 'queen' | 'king' | null;
+export type Piece = 'rook' | 'knight' | 'bishop' | 'pawn' | 'queen' | 'king' | null;
 
 export interface ChessFile {
     position: PiecePosition;
