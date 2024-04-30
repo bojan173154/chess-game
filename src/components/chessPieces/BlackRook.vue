@@ -1,18 +1,8 @@
 <template>
     <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="45" height="45" id="svg3128" sodipodi:version="0.32" inkscape:version="0.46" version="1.0" sodipodi:docbase="/home/cburnett/wikipedia/images/chess" sodipodi:docname="Chess_rdt45.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape">
         <defs id="defs3130">
-            <inkscape:perspective sodipodi:type="inkscape:persp3d" inkscape:vp_x="0 : 22.5 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="45 : 22.5 : 1" inkscape:persp3d-origin="22.5 : 15 : 1" id="perspective18"/>
         </defs>
-        <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" gridtolerance="10000" guidetolerance="10" objecttolerance="10" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="11.313709" inkscape:cx="26.720874" inkscape:cy="17.64173" inkscape:document-units="px" inkscape:current-layer="layer1" height="45px" width="45px" inkscape:grid-points="true" showgrid="true" inkscape:window-width="977" inkscape:window-height="852" inkscape:window-x="22" inkscape:window-y="14">
-            <inkscape:grid id="GridFromPre046Settings" type="xygrid" originx="0px" originy="0px" spacingx="0.5px" spacingy="0.5px" color="#0000ff" empcolor="#0000ff" opacity="0.2" empopacity="0.4" empspacing="5"/>
-        </sodipodi:namedview>
         <metadata id="metadata3133">
-            <rdf:RDF>
-                <cc:Work rdf:about="">
-                    <dc:format>image/svg+xml</dc:format>
-                    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-                </cc:Work>
-            </rdf:RDF>
         </metadata>
         <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" style="display:inline">
             <path style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 9,6 L 36,6 L 36,9 L 9,9 L 9,6 z" id="path3119" sodipodi:nodetypes="ccccc"/>

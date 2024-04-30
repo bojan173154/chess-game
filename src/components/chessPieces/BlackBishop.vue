@@ -1,15 +1,6 @@
 <template>
     <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" width="45" height="45" id="svg3860" inkscape:version="0.48.4 r9939" sodipodi:docname="Chess_edl45.svg">
-        <metadata id="metadata3880">
-            <rdf:RDF>
-                <cc:Work rdf:about="">
-                    <dc:format>image/svg+xml</dc:format>
-                    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-                </cc:Work>
-            </rdf:RDF>
-        </metadata>
         <defs id="defs3878"/>
-        <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="1920" inkscape:window-height="1020" id="namedview3876" showgrid="false" inkscape:zoom="5.2444444" inkscape:cx="-13.728814" inkscape:cy="22.5" inkscape:window-x="-2" inkscape:window-y="33" inkscape:window-maximized="1" inkscape:current-layer="g3862"/>
         <g transform="rotate(180,22.5,22.5)" style="opacity:1; fill:none; fill-rule:evenodd; fill-opacity:1; stroke:#000000; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; stroke-miterlimit:4; stroke-dasharray:none; stroke-opacity:1;" id="g3862">
             <rect x="0" y="0" width="45" height="45" style="stroke:none" id="rect3864"/>
             <g style="fill:#000000; stroke:#000000; stroke-linecap:butt;" id="g3866">
