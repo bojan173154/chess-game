@@ -1,20 +1,23 @@
 <template>
-    <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="45" height="45" id="svg3128" sodipodi:version="0.32" inkscape:version="0.46" version="1.0" sodipodi:docbase="/home/cburnett/wikipedia/images/chess" sodipodi:docname="Chess_qdt45.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape">
-        <defs id="defs3130">
-        </defs>
-        <metadata id="metadata3133">
-        </metadata>
-        <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
-            <path sodipodi:type="arc" style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="path5571" sodipodi:cx="7" sodipodi:cy="13" sodipodi:rx="2" sodipodi:ry="2" d="M 9,13 A 2,2 0 1 1 5,13 A 2,2 0 1 1 9,13 z" transform="matrix(1,0,0,-1,-1,46)"/>
-            <path sodipodi:type="arc" style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="path5573" sodipodi:cx="7" sodipodi:cy="13" sodipodi:rx="2" sodipodi:ry="2" d="M 9,13 A 2,2 0 1 1 5,13 A 2,2 0 1 1 9,13 z" transform="matrix(1,0,0,-1,15.5,50.5)"/>
-            <path sodipodi:type="arc" style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="path5575" sodipodi:cx="7" sodipodi:cy="13" sodipodi:rx="2" sodipodi:ry="2" d="M 9,13 A 2,2 0 1 1 5,13 A 2,2 0 1 1 9,13 z" transform="matrix(1,0,0,-1,32,46)"/>
-            <path sodipodi:type="arc" style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="path5577" sodipodi:cx="7" sodipodi:cy="13" sodipodi:rx="2" sodipodi:ry="2" d="M 9,13 A 2,2 0 1 1 5,13 A 2,2 0 1 1 9,13 z" transform="matrix(1,0,0,-1,7,49.5)"/>
-            <path sodipodi:type="arc" style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="path5579" sodipodi:cx="7" sodipodi:cy="13" sodipodi:rx="2" sodipodi:ry="2" d="M 9,13 A 2,2 0 1 1 5,13 A 2,2 0 1 1 9,13 z" transform="matrix(1,0,0,-1,24,49)"/>
-            <path style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="M 9,19 C 17.5,20.5 30,20.5 36,19 L 38,31 L 31,20 L 31,34 L 25.5,20.5 L 22.5,35.5 L 19.5,20.5 L 14,34.5 L 14,20 L 7,31 L 9,19 z" id="path5581" sodipodi:nodetypes="cccccccccccc"/>
-            <path style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="M 9,19 C 9,17 10.5,17 11.5,15 C 12.5,13.5 12.5,14 12,11.5 C 10.5,10.5 10.5,9 10.5,9 C 9,7.5 11,6.5 11,6.5 C 17.5,5.5 27.5,5.5 34,6.5 C 34,6.5 35.5,7.5 34,9 C 34,9 34.5,10.5 33,11.5 C 32.5,14 32.5,13.5 33.5,15 C 34.5,17 36,17 36,19 C 27.5,20.5 17.5,20.5 9,19 z" id="path5583" sodipodi:nodetypes="ccccccccccc"/>
-            <path style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#ffffff;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" d="M 11.5,15 C 15,16 30,16 33.5,15" id="path5585" sodipodi:nodetypes="cc"/>
-            <path style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#ffffff;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" d="M 12,11.5 C 18,12.5 27,12.5 33,11.5" id="path5587" sodipodi:nodetypes="cc"/>
-            <path style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#ffffff;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" d="M 10.5,9 C 15.5,10 29,10 34,9" id="path5589" sodipodi:nodetypes="cc"/>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="45" height="45">
+        <g style="fill:#000000;stroke:#000000;stroke-width:1.5; stroke-linecap:round;stroke-linejoin:round">
+
+            <path d="M 9,26 C 17.5,24.5 30,24.5 36,26 L 38.5,13.5 L 31,25 L 30.7,10.9 L 25.5,24.5 L 22.5,10 L 19.5,24.5 L 14.3,10.9 L 14,25 L 6.5,13.5 L 9,26 z" style="stroke-linecap:butt;fill:#000000"/>
+            <path d="m 9,26 c 0,2 1.5,2 2.5,4 1,1.5 1,1 0.5,3.5 -1.5,1 -1,2.5 -1,2.5 -1.5,1.5 0,2.5 0,2.5 6.5,1 16.5,1 23,0 0,0 1.5,-1 0,-2.5 0,0 0.5,-1.5 -1,-2.5 -0.5,-2.5 -0.5,-2 0.5,-3.5 1,-2 2.5,-2 2.5,-4 -8.5,-1.5 -18.5,-1.5 -27,0 z"/>
+            <path d="M 11.5,30 C 15,29 30,29 33.5,30"/>
+            <path d="m 12,33.5 c 6,-1 15,-1 21,0"/>
+            <circle cx="6" cy="12" r="2"/>
+            <circle cx="14" cy="9" r="2"/>
+            <circle cx="22.5" cy="8" r="2"/>
+            <circle cx="31" cy="9" r="2"/>
+            <circle cx="39" cy="12" r="2"/>
+            <path d="M 11,38.5 A 35,35 1 0 0 34,38.5" style="fill:none; stroke:#000000;stroke-linecap:butt;"/>
+            <g style="fill:none; stroke:#ffffff;">
+                <path d="M 11,29 A 35,35 1 0 1 34,29"/>
+                <path d="M 12.5,31.5 L 32.5,31.5"/>
+                <path d="M 11.5,34.5 A 35,35 1 0 0 33.5,34.5"/>
+                <path d="M 10.5,37.5 A 35,35 1 0 0 34.5,37.5"/>
+            </g>
         </g>
     </svg>
 </template>
