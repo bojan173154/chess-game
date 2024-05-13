@@ -28,7 +28,7 @@ export default (file: ChessFile) => {
             if (
                 findPiece &&
                 findPiece.piece &&
-                findPiece.pieceColor === file.pieceColor
+                chessStore.selectedPiece.color === file.pieceColor
             ) {
                 return;
             }
