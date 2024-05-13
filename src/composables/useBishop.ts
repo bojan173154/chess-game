@@ -50,7 +50,14 @@ export default (file: ChessFile) => {
                     .flat()
                     .find((piece) => piece.position === newPosition);
 
-                if (findPiece && findPiece.piece && findPiece.pieceColor === chessStore.selectedPiece.pieceColor) {
+                if (findPiece && findPiece.piece) {
+                    if (findPiece.pieceColor !== chessStore.selectedPiece.pieceColor) {
+                        possibleBishopMoves.push(newPosition);
+                        if (possibleBishopMoves.includes(file.position)) {
+                            chessStore.movePiece(file);
+                            return;
+                        }
+                    }
                     break;
                 }
 
