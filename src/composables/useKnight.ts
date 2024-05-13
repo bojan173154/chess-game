@@ -20,6 +20,18 @@ export default (file: ChessFile) => {
         ];
 
         if (possibleKnightMoves.includes(file.position)) {
+            const findPiece = chessStore
+                .chessBoard
+                .flat()
+                .find((piece) => piece.position === file.position);
+
+            if (
+                findPiece &&
+                findPiece.piece &&
+                findPiece.pieceColor === file.pieceColor
+            ) {
+                return;
+            }
             chessStore.movePiece(file);
         }
     }
