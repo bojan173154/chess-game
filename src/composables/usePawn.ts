@@ -5,46 +5,45 @@ import { getNextLetter } from '../services/utilities';
 
 import type { ChessFile } from '../interfaces/chessInterface';
 
-export default (piece: ChessFile) => {
+export default (file: ChessFile) => {
     const chessStore = useChessStore();
 
     if (chessStore.selectedPiece) {
-        console.log(chessStore.selectedPiece);
         const numOfFilesToMove = ref<1 | 2>(chessStore.selectedPiece?.hasMoved ? 1 : 2);
 
         const positionToMove = chessStore.selectedPiece.pieceColor === 'white'
             ? +chessStore.selectedPiece.position[1] + 1
             : +chessStore.selectedPiece.position[1] - 1;
 
-        if (piece.position === chessStore.selectedPiece.position) return;
+        if (file.position === chessStore.selectedPiece.position) return;
 
-        if (piece.position[0] === chessStore.selectedPiece.position[0]) {
+        if (file.position[0] === chessStore.selectedPiece.position[0]) {
             if (
                 chessStore.selectedPiece.pieceColor === 'white' &&
-                +piece.position[1] - +chessStore.selectedPiece.position[1] <= numOfFilesToMove.value
+                +file.position[1] - +chessStore.selectedPiece.position[1] <= numOfFilesToMove.value
             ) {
                 const nextFile = chessStore
                     .chessBoard
                     .flat()
-                    .find((pieceToUpdate) => pieceToUpdate.position === `${piece.position[0]}${positionToMove}`);
+                    .find((pieceToUpdate) => pieceToUpdate.position === `${file.position[0]}${positionToMove}`);
 
                 if (!nextFile?.piece) {
-                    chessStore.movePiece(piece);
+                    chessStore.movePiece(file);
                 }
                 return;
             }
 
             if (
                 chessStore.selectedPiece.pieceColor === 'black' &&
-                +chessStore.selectedPiece.position[1] - +piece.position[1] <= numOfFilesToMove.value
+                +chessStore.selectedPiece.position[1] - +file.position[1] <= numOfFilesToMove.value
             ) {
                 const previousFile = chessStore
                     .chessBoard
                     .flat()
-                    .find((pieceToUpdate) => pieceToUpdate.position === `${piece.position[0]}${positionToMove}`);
+                    .find((pieceToUpdate) => pieceToUpdate.position === `${file.position[0]}${positionToMove}`);
 
                 if (!previousFile?.piece) {
-                    chessStore.movePiece(piece);
+                    chessStore.movePiece(file);
                 }
                 return;
             }
@@ -69,12 +68,12 @@ export default (piece: ChessFile) => {
                 firstDiagonalFile.piece &&
                 firstDiagonalFile.piece !== 'king' &&
                 firstDiagonalFile.pieceColor !== chessStore.selectedPiece.pieceColor &&
-                piece.position === firstDiagonalPosition
+                file.position === firstDiagonalPosition
             ) {
                 chessStore.movePiece({
                     ...firstDiagonalFile,
-                    piece: piece.piece,
-                    pieceColor: piece.pieceColor
+                    piece: file.piece,
+                    pieceColor: file.pieceColor
                 });
                 return;
             }
@@ -91,12 +90,12 @@ export default (piece: ChessFile) => {
                 secondDiagonalFile.piece &&
                 secondDiagonalFile.piece !== 'king' &&
                 secondDiagonalFile.pieceColor !== chessStore.selectedPiece.pieceColor &&
-                piece.position === secondDiagonalPosition
+                file.position === secondDiagonalPosition
             ) {
                 chessStore.movePiece({
                     ...secondDiagonalFile,
-                    piece: piece.piece,
-                    pieceColor: piece.pieceColor
+                    piece: file.piece,
+                    pieceColor: file.pieceColor
                 });
             }
         }

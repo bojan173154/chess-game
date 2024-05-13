@@ -2,6 +2,7 @@ import { ref } from 'vue';
 import { defineStore } from 'pinia';
 
 import usePawn from '../composables/usePawn';
+import useKnight from '../composables/useKnight';
 
 import type { ChessFile } from '../interfaces/chessInterface';
 
@@ -20,12 +21,12 @@ export const useChessStore = defineStore('chess', () => {
         }
     };
 
-    const movePiece = (piece: ChessFile): void => {
+    const movePiece = (file: ChessFile): void => {
         if (selectedPiece.value) {
             const updatedPiece = chessBoard
                 .value
                 .flat()
-                .find((pieceToUpdate) => pieceToUpdate.position === piece.position);
+                .find((pieceToUpdate) => pieceToUpdate.position === file.position);
 
             if (updatedPiece) {
                 updatedPiece.piece = selectedPiece.value.piece;
@@ -48,16 +49,20 @@ export const useChessStore = defineStore('chess', () => {
         }
     };
 
-    const handleFileClick = (piece: ChessFile): void => {
-        if (!selectedPiece.value && turnToMove.value === piece.pieceColor) {
-            selectedPiece.value = piece;
+    const handleFileClick = (file: ChessFile): void => {
+        if (!selectedPiece.value && turnToMove.value === file.pieceColor) {
+            selectedPiece.value = file;
             return;
         }
 
         if (selectedPiece.value) {
             switch (selectedPiece.value.piece) {
             case 'pawn':
-                usePawn(piece);
+                usePawn(file);
+                break;
+
+            case 'knight':
+                useKnight(file);
                 break;
 
             default:
