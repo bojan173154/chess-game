@@ -21,7 +21,7 @@ const conditionalNewLine = (position: PiecePosition) => {
     <div class="chess-container">
         <div v-for="(row, index) in chessStore.chessBoard" :key="index" class="chess-row">
             <div v-for="file in row" :key="file.position">
-                <chess-file :chess-file="file" />
+                <chess-file :chess-file="file" @click="chessStore.handleFileClick(file)"/>
             </div>
             <br v-if="conditionalNewLine(row[0].position)" />
         </div>

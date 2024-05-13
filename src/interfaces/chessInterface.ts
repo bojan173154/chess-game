@@ -14,4 +14,5 @@ export interface ChessFile {
     piece: Piece;
     color: 'white' | 'black';
     pieceColor: 'white' | 'black' | null;
+    hasMoved: boolean;
 }
