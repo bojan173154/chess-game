@@ -4,6 +4,8 @@ import { defineStore } from 'pinia';
 import usePawn from '../composables/usePawn';
 import useKnight from '../composables/useKnight';
 import useBishop from '../composables/useBishop';
+import useQueen from '../composables/useQueen';
+import useRook from '../composables/useRook';
 
 import type { ChessFile } from '../interfaces/chessInterface';
 
@@ -68,6 +70,14 @@ export const useChessStore = defineStore('chess', () => {
 
             case 'bishop':
                 useBishop(file);
+                break;
+
+            case 'queen':
+                useQueen(file);
+                break;
+
+            case 'rook':
+                useRook(file);
                 break;
 
             default:

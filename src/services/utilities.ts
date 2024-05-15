@@ -11,3 +11,9 @@ export const getNextLetter = (currentLetter: string, incrementBy: number): strin
     const nextLetter = letters[nextIndex < 0 ? nextIndex + letters.length : nextIndex];
     return nextLetter;
 };
+
+export const getLetterNumber = (letter: string): number => {
+    const upperLetter = letter.toUpperCase();
+    const index = letters.indexOf(upperLetter);
+    return index + 1;
+};
