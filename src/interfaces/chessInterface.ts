@@ -16,3 +16,8 @@ export interface ChessFile {
     pieceColor: 'white' | 'black' | null;
     hasMoved: boolean;
 }
+
+export interface PromotedPiece {
+    piece?: Piece;
+    color: 'white' | 'black';
+}

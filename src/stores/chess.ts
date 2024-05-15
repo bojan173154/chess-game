@@ -7,12 +7,15 @@ import useBishop from '../composables/useBishop';
 import useQueen from '../composables/useQueen';
 import useRook from '../composables/useRook';
 
-import type { ChessFile } from '../interfaces/chessInterface';
+import type { ChessFile, PromotedPiece, PiecePosition } from '../interfaces/chessInterface';
 
 export const useChessStore = defineStore('chess', () => {
     const chessBoard = ref<ChessFile[][]>([]);
     const turnToMove = ref<'black' | 'white'>('white');
     const selectedPiece = ref<ChessFile | null>(null);
+    const disableBoard = ref<boolean>(false);
+    const promotedPiece = ref<PromotedPiece | null>(null);
+    const savedPosition = ref<PiecePosition | null>(null);
 
     const initializeChessBoard = async (): Promise<void> => {
         try {
@@ -52,9 +55,28 @@ export const useChessStore = defineStore('chess', () => {
         }
     };
 
+    const handlePromotion = (file: ChessFile): void => {
+        promotedPiece.value = {
+            color: selectedPiece.value?.pieceColor as 'white' | 'black'
+        };
+
+        savedPosition.value = file.position;
+    };
+
     const handleFileClick = (file: ChessFile): void => {
+        if (disableBoard.value) return;
+
         if (!selectedPiece.value && turnToMove.value === file.pieceColor) {
             selectedPiece.value = file;
+            return;
+        }
+
+        if (
+            (file.position[1] === '8' && selectedPiece.value?.pieceColor === 'white' && selectedPiece.value?.piece === 'pawn') ||
+            (file.position[1] === '1' && selectedPiece.value?.pieceColor === 'black' && selectedPiece.value?.piece === 'pawn')
+        ) {
+            disableBoard.value = true;
+            handlePromotion(file);
             return;
         }
 
@@ -94,6 +116,9 @@ export const useChessStore = defineStore('chess', () => {
         turnToMove,
         handleFileClick,
         selectedPiece,
-        movePiece
+        movePiece,
+        promotedPiece,
+        savedPosition,
+        disableBoard
     };
 });
