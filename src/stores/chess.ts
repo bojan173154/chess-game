@@ -8,7 +8,12 @@ import useQueen from '../composables/useQueen';
 import useRook from '../composables/useRook';
 import useKing from '../composables/useKing';
 
-import type { ChessFile, PromotedPiece, PiecePosition } from '../interfaces/chessInterface';
+import type {
+    ChessFile,
+    PromotedPiece,
+    PiecePosition,
+    LastMove
+} from '../interfaces/chessInterface';
 
 export const useChessStore = defineStore('chess', () => {
     const chessBoard = ref<ChessFile[][]>([]);
@@ -17,6 +22,7 @@ export const useChessStore = defineStore('chess', () => {
     const disableBoard = ref<boolean>(false);
     const promotedPiece = ref<PromotedPiece | null>(null);
     const savedPosition = ref<PiecePosition | null>(null);
+    const lastMove = ref<LastMove | null>(null);
 
     const initializeChessBoard = async (): Promise<void> => {
         try {
@@ -49,6 +55,13 @@ export const useChessStore = defineStore('chess', () => {
             if (movedPiece) {
                 movedPiece.piece = null;
             }
+
+            lastMove.value = {
+                piece: file.piece,
+                color: selectedPiece.value.pieceColor,
+                from: selectedPiece.value.position,
+                to: file.position
+            };
 
             selectedPiece.value = null;
 
@@ -84,7 +97,7 @@ export const useChessStore = defineStore('chess', () => {
         if (selectedPiece.value) {
             switch (selectedPiece.value.piece) {
             case 'pawn':
-                usePawn(file);
+                usePawn(file, lastMove.value);
                 break;
 
             case 'knight':
@@ -108,8 +121,6 @@ export const useChessStore = defineStore('chess', () => {
                 break;
             }
         }
-
-        selectedPiece.value = null;
     };
 
     return {

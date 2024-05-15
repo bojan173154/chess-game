@@ -1,11 +1,11 @@
 import { ref } from 'vue';
 import { useChessStore } from '../stores/chess';
 
-import { getNextLetter } from '../services/utilities';
+import { getNextLetter, getLetterNumber } from '../services/utilities';
 
-import type { ChessFile } from '../interfaces/chessInterface';
+import type { ChessFile, LastMove } from '../interfaces/chessInterface';
 
-export default (file: ChessFile) => {
+export default (file: ChessFile, lastMove: LastMove | null) => {
     const chessStore = useChessStore();
 
     if (chessStore.selectedPiece) {
@@ -95,6 +95,58 @@ export default (file: ChessFile) => {
                 chessStore.movePiece({
                     ...secondDiagonalFile,
                     piece: file.piece,
+                    pieceColor: file.pieceColor
+                });
+            }
+        }
+
+        const additionalChecksForEnPassant = () => {
+            if (
+                chessStore.selectedPiece &&
+                chessStore.selectedPiece.pieceColor === 'white' &&
+                lastMove &&
+                (+file.position[1] - +lastMove.to[1] === 1) &&
+                file.position[0] === lastMove.to[0]
+            ) {
+                return true;
+            }
+
+            if (
+                chessStore.selectedPiece &&
+                chessStore.selectedPiece.pieceColor === 'black' &&
+                lastMove &&
+                (+lastMove.to[1] - +file.position[1] === 1) &&
+                file.position[0] === lastMove.to[0]
+            ) {
+                return true;
+            }
+
+            return false;
+        };
+
+        if (
+            lastMove?.piece === 'pawn' &&
+            lastMove?.to[1] === chessStore.selectedPiece.position[1] &&
+            (Math.abs(getLetterNumber(lastMove?.to[0]) - getLetterNumber(chessStore.selectedPiece.position[0])) === 1) &&
+            (Math.abs(+lastMove?.to[1] - +lastMove?.from[1]) === 2) &&
+            additionalChecksForEnPassant()
+        ) {
+            const oldPawn = chessStore
+                .chessBoard
+                .flat()
+                .find((oldPiece) => oldPiece.position === lastMove.to);
+
+            if (oldPawn) oldPawn.piece = null;
+
+            const newPawn = chessStore
+                .chessBoard
+                .flat()
+                .find((newPiece) => newPiece.position === file.position);
+
+            if (newPawn) {
+                chessStore.movePiece({
+                    ...newPawn,
+                    piece: 'pawn',
                     pieceColor: file.pieceColor
                 });
             }

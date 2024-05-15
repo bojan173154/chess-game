@@ -21,3 +21,10 @@ export interface PromotedPiece {
     piece?: Piece;
     color: 'white' | 'black';
 }
+
+export interface LastMove {
+    piece: Piece;
+    color: 'white' | 'black' | null;
+    from: PiecePosition;
+    to: PiecePosition;
+}
