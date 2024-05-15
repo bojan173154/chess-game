@@ -6,7 +6,7 @@ import { getNextLetter, getLetterNumber } from '../services/utilities';
 
 import type { ChessFile } from '../interfaces/chessInterface';
 
-export default (file: ChessFile) => {
+export default (file: ChessFile, moveOneSquare = false) => {
     const chessStore = useChessStore();
 
     const possibleRookMoves: string[] = [];
@@ -25,10 +25,12 @@ export default (file: ChessFile) => {
             directions.value = 'left';
         }
 
-        const maxMoves = (
-            Math.abs(+file.position[1] - +chessStore.selectedPiece.position[1]) ||
-            Math.abs(getLetterNumber(file.position[0]) - getLetterNumber(chessStore.selectedPiece.position[0]))
-        );
+        const maxMoves = moveOneSquare
+            ? 1
+            : (
+                Math.abs(+file.position[1] - +chessStore.selectedPiece.position[1]) ||
+                Math.abs(getLetterNumber(file.position[0]) - getLetterNumber(chessStore.selectedPiece.position[0]))
+            );
 
         const getNewPosition = (move: number) => {
             if (!chessStore.selectedPiece) return;

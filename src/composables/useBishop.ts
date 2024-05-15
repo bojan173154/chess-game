@@ -6,7 +6,7 @@ import { getNextLetter } from '../services/utilities';
 
 import type { ChessFile } from '../interfaces/chessInterface';
 
-export default (file: ChessFile) => {
+export default (file: ChessFile, moveOneSquare = false) => {
     const chessStore = useChessStore();
     const possibleBishopMoves: string[] = [];
     const diagonal = ref<'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight'>('bottomRight');
@@ -22,7 +22,9 @@ export default (file: ChessFile) => {
             diagonal.value = 'topRight';
         }
 
-        const maxMoves = Math.abs(+file.position[1] - +chessStore.selectedPiece.position[1]);
+        const maxMoves = moveOneSquare
+            ? 1
+            : Math.abs(+file.position[1] - +chessStore.selectedPiece.position[1]);
 
         const getNewPosition = (move: number) => {
             if (!chessStore.selectedPiece) return;
